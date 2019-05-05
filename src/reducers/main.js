@@ -12,20 +12,18 @@ const initialState = {
 };
 
 const addLocationToHistory = (state, payload) => {
-  if (!state.locationHistory.includes(payload)) {
-    state.locationHistory.push(payload);
-  }
-  return state;
-};
-
-const omitLocationFromHistory = (state, payload) => ({
-  ...state,
-  locationHistory: state.locationHistory.includes(payload)
-    ? state.locationHistory.filter(loc => loc !== payload)
-    : state.locationHistory
-});
-
-const getSuggestedDataStart = (state, payload) => ({
+    if (!state.locationHistory.includes(payload)) {
+      state.locationHistory.push(payload);
+    }
+    return state;
+  },
+  omitLocationFromHistory = (state, payload) => ({
+    ...state,
+    locationHistory: state.locationHistory.includes(payload)
+      ? state.locationHistory.filter(loc => loc !== payload)
+      : state.locationHistory
+  }),
+  getSuggestedDataStart = (state, payload) => ({
     ...state,
     suggested: { ...state.suggested, isLoading: true }
   }),
