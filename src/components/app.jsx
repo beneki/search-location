@@ -51,7 +51,7 @@ class App extends Component {
     // this.props.suggested && this.props.getSuggestedLocations("teh");
     const position = [this.state.lat, this.state.lon];
     return (
-      <div>
+      <div style={{ width: "90%", margin: "0 auto" }}>
         <Grid container spacing={24} justify="center">
           <Grid item xs={6}>
             <Map
