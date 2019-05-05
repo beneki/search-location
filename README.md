@@ -6,6 +6,7 @@ You start to type in input and It sends a request to 'https://nominatim.openstre
 
 - React 16.8.6
 - React-Redux 7.0.3
+- Redux-Saga 1.0.2
 - React-Leaflet 1.9.1
 - Material-UI 3.9.3
 - Webpack 4.23.1
