@@ -22,11 +22,12 @@ class App extends Component {
   renderLocationHistory(locations) {
     return locations.map(loc => {
       return (
-        <LocationCard
-          key={loc.place_id}
-          location={loc}
-          changeLocHistory={this.changeLocHistory}
-        />
+        <Grid item md={4} sm={12} key={loc.place_id}>
+          <LocationCard
+            location={loc}
+            changeLocHistory={this.changeLocHistory}
+          />
+        </Grid>
       );
     });
   }
@@ -80,10 +81,8 @@ class App extends Component {
           </Grid>
         </Grid>
         <Grid container spacing={24} justify="center">
-          <Grid item xs={6}>
-            {this.props.locationHistory.length > 0 &&
-              this.renderLocationHistory(this.props.locationHistory)}
-          </Grid>
+          {this.props.locationHistory.length > 0 &&
+            this.renderLocationHistory(this.props.locationHistory)}
         </Grid>
       </div>
     );

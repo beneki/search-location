@@ -1,0 +1,48 @@
+$colors: (
+  default: #757575,
+  white: #fff,
+  black: #000,
+  light-black: lighten(#000, 50%),
+  /* for future use*/ primary: #aac9ff,
+  accent: #fff6bb,
+  shadow: #cecece
+);
+@function color($color-name) {
+  @return map-get($colors, $color-name);
+}
+.shadow-container {
+  box-shadow: -3px 5px 14px 1px color(shadow);
+}
+.card-container {
+  background-color: color(primary);
+}
+.card {
+  min-width: 275;
+  margin: 0 0 1rem;
+  border: 0;
+  clip-path: polygon(100% 0, 100% 82%, 45% 100%, 0 100%, 0 0);
+  background-color: color(default);
+  .content {
+    padding-top: 0;
+  }
+  .bullet {
+    display: inline-block;
+    margin: 0 2px;
+    transform: scale(0.8);
+  }
+  .title {
+    font-size: 14;
+    margin-bottom: 0;
+  }
+  .pos {
+    margin: 1rem 0 0rem;
+  }
+  .card-action {
+    direction: rtl;
+    button {
+      color: color(primary);
+      border-radius: 2px;
+      border: 1px solid color(primary);
+    }
+  }
+}

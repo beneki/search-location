@@ -45,7 +45,7 @@ module.exports = {
         ]
       },
       {
-        test: /\.less$/,
+        test: /\.scss$/,
         use: [
           { loader: MiniCSSExtractPlugin.loader },
           {
@@ -55,7 +55,7 @@ module.exports = {
             }
           },
           { loader: "postcss-loader" },
-          { loader: "less-loader" }
+          { loader: "sass-loader" }
         ]
       }
     ]

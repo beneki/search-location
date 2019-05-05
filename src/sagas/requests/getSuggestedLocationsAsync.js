@@ -1,19 +1,15 @@
 import "whatwg-fetch";
+import { fetchDataFailed } from "../../actions/";
+import { put } from "redux-saga/effects";
 
-export default class getSuggestedLocationsAsync {
-  *getSuggestedLocations(searchStr) {
-    try {
-      const response = yield fetch(
-        `https://nominatim.openstreetmap.org/search?format=json&q=${searchStr}`
-      );
+export default function* getSuggestedLocations(searchStr) {
+  try {
+    const response = yield fetch(
+      `https://nominatim.openstreetmap.org/search?format=json&q=${searchStr}`
+    );
 
-      const resp = yield response.json();
-      console.log(resp);
-      return resp;
-      // return {}
-    } catch (error) {
-      // tslint:disable-next-line:no-console
-      console.log(error);
-    }
+    return yield response.json();
+  } catch (error) {
+    yield put(fetchDataFailed(error));
   }
 }

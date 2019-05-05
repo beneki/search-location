@@ -21,13 +21,8 @@ module.exports = {
         use: [{ loader: "style-loader" }, { loader: "css-loader" }]
       },
       {
-        test: /\.less$/,
-        use: [
-          { loader: "style-loader" },
-          { loader: "css-loader" },
-          { loader: "postcss-loader" },
-          { loader: "less-loader" }
-        ]
+        test: /\.scss$/,
+        loaders: ["style-loader", "css-loader", "sass-loader"]
       },
       {
         test: /\.(jpg|png|gif)$/,

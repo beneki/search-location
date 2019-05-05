@@ -11,40 +11,41 @@ const initialState = {
   loading: false
 };
 
-const addLocationToHistory = (state, payload) => {
-    if (!state.locationHistory.includes(payload)) {
-      state.locationHistory.push(payload);
-    }
-    return state;
-  },
-  omitLocationFromHistory = (state, payload) => ({
-    ...state,
-    locationHistory: state.locationHistory.includes(payload)
-      ? state.locationHistory.filter(loc => loc !== payload)
-      : state.locationHistory
-  }),
-  getSuggestedDataStart = (state, payload) => ({
-    ...state,
-    suggested: { ...state.suggested, isLoading: true }
-  }),
-  getSuggestedDataSucceed = (state, payload) => ({
-    ...state,
-    suggested: { ...state.suggested, isLoading: false, items: payload }
-  }),
-  getSuggestedDataFailed = (state, payload) => ({
-    ...state,
-    suggested: { ...state.suggested, isLoading: false, error: payload }
-  });
-
-const reducerHandler = {
-  [ADD_LOCATION]: addLocationToHistory,
-  [OMIT_LOCATION]: omitLocationFromHistory,
-  [FETCH_DATA + START]: getSuggestedDataStart,
-  [FETCH_DATA + SUCCESS]: getSuggestedDataSucceed,
-  [FETCH_DATA + ERROR]: getSuggestedDataFailed
-};
-
 export default (state = initialState, action) => {
-  const reducer = reducerHandler[action.type];
-  return reducer ? reducer(state, action.payload) : state;
+  const { type, payload } = action;
+  switch (type) {
+    case ADD_LOCATION:
+      return {
+        ...state,
+        locationHistory: [...state.locationHistory, payload]
+      };
+      break;
+    case OMIT_LOCATION:
+      return {
+        ...state,
+        locationHistory: state.locationHistory.filter(itm => itm !== payload)
+      };
+      break;
+    case FETCH_DATA + START:
+      return {
+        ...state,
+        suggested: { ...state.suggested, isLoading: true }
+      };
+      break;
+    case FETCH_DATA + SUCCESS:
+      return {
+        ...state,
+        suggested: { ...state.suggested, isLoading: false, items: payload }
+      };
+      break;
+    case FETCH_DATA + ERROR:
+      return {
+        ...state,
+        suggested: { ...state.suggested, isLoading: false, error: payload }
+      };
+      break;
+    default:
+      return state;
+      break;
+  }
 };
