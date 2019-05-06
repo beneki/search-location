@@ -8,8 +8,7 @@ const initialState = {
     error: null,
     items: []
   },
-  locationHistory: [],
-  loading: false
+  locationHistory: []
 };
 
 const reducerHandler = (state, payload) => {
