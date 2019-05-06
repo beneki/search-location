@@ -54,7 +54,7 @@ class App extends Component {
     return (
       <div style={{ width: "90%", margin: "0 auto" }}>
         <Grid container spacing={24} justify="center">
-          <Grid item xs={6}>
+          <Grid item xs={12}>
             <Map
               style={{ height: "500px", width: "100%", margin: "0 auto" }}
               center={position}

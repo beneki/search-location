@@ -50,4 +50,5 @@ const pickReducer = (state = initialState, action) => {
   const reducer = reducerHandler(state, action.payload)[action.type];
   return reducer ? reducer() : state;
 };
+
 export default pickReducer;
