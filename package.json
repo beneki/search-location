@@ -1,5 +1,5 @@
 {
-  "name": "parcels-system-client",
+  "name": "search-location",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,7 +9,7 @@
     "build": "webpack --config ./config/webpack.prod.js --mode production"
   },
   "keywords": [],
-  "author": "",
+  "author": "Hossein Ekrami",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.1.2",
