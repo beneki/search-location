@@ -1,8 +1,8 @@
-![search-location](https://user-images.githubusercontent.com/20746347/57194853-f1748680-6f60-11e9-87f4-ffd7cd1aeb84.jpg)
+![mao-search-img](https://user-images.githubusercontent.com/20746347/57380016-4a405b00-71bd-11e9-8e71-fdc3bed86674.jpg)
 
 # search-location
 
-You start to type in input and It sends a request to 'https://nominatim.openstreetmap.org' and after that the input gives you a autocomple feature ( a list of locations all around the world ) and then You can pick an item of the list and It will be added to your search history that appears under the map ( also you can omit each item you want from the list of search history with the 'Omit button' )
+Start to type in input and the input gives you a autocomple list of locations all around the world then you can pick an item of the list and It will be added to your search history that appears under the map ( also you can omit each item you want from the list of search history with 'x' button )
 
 ## Features
 
