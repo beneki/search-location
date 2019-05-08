@@ -42,7 +42,9 @@ $colors: (
     button {
       color: color(primary);
       border-radius: 2px;
-      border: 1px solid color(primary);
     }
+  }
+  .MuiButton-sizeSmall-217 {
+    min-width: 30px;
   }
 }
